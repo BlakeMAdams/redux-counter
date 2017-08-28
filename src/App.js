@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 import "./App.css";
+import { connect } from 'react-redux';
+import { increment, decrement } from './ducks/counter';
 
 export class App extends Component {
 	render() {
@@ -59,5 +61,14 @@ export class App extends Component {
 		);
 	}
 }
+function mapStateToProps(state){
+	// can pick off properties of state, but here we will return everything
+	return state; // returned object will merge with props
+}
+let actionOutputs = {
+	increment,
+	decrement
+}
+let connected = connect(maptStateToProps , actionOutputs)
 
-export default App;
+export default connected(App);
