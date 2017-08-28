@@ -21,7 +21,7 @@ export function decrement(amount){
 		payload: amount
 	}
 }
-let intitialState = {
+let initialState = {
 	counter: 0
 }
 
@@ -37,7 +37,7 @@ function reducer(state = initialState, action) {
 			return Object.assign({}, state, { counter: val })
 
 		case DECREMENT:
-			return Object.assing({}, state, { counter: state.counter - action.payload })
+			return Object.assign({}, state, { counter: state.counter - action.payload })
 		
 	}
 	return state;
